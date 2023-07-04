@@ -1,0 +1,95 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/release/release",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"subPackages": [
+		{
+			"root": "subPages/agreement",
+			"pages": [
+				{
+					"path": "user"
+				},
+				{
+					"path": "register"
+				},
+				{
+					"path": "privacy"
+				}
+			]
+		},
+		{
+			"root": "subPages/user",
+			"pages": [
+				{
+					"path": "login/login",
+					"style": {
+						"navigationBarTitleText": "账号登录"
+					}
+				},
+				{
+					"path": "login/phone-login",
+					"style": {
+						"navigationBarTitleText": "手机登录"
+					}
+				},
+				{
+					"path": "settings/settings",
+					"style": {
+						"navigationBarTitleText": "设置"
+					},
+					"meta": {
+						"verifyLogin": true
+					}
+				}
+			]
+		}
+	],
+	"tabBar": {
+		"color": "#616A75",
+		"selectedColor": "#537EEF",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/image/tabbar/home.png",
+				"selectedIconPath": "static/image/tabbar/home-active.png"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "我的",
+				"iconPath": "static/image/tabbar/my.png",
+				"selectedIconPath": "static/image/tabbar/my-active.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "基板",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}

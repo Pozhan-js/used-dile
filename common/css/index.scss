@@ -1,0 +1,384 @@
+// 全屏宽高
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.h-fit {
+  height: fit-content;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+// box-sizing
+.sizing-content {
+  box-sizing: content-box;
+}
+
+.sizing-border {
+  box-sizing: border-box;
+}
+
+// 伪类元素
+.before,
+.after {
+  position: relative;
+}
+
+.before::before,
+.after::after {
+  position: absolute;
+  content: "";
+}
+
+/*文字超出设置省略号*/
+.text_ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.text-ellipsis,
+.text-ellipsis-2 {
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+// 字体大小
+$size: (
+  20,
+  22,
+  24,
+  32
+);
+
+@each $num in $size {
+  .font-#{$num} {
+    font-size: #{$num}rpx;
+  }
+}
+
+.color-white {
+  color: #fff;
+}
+
+.color-theme {
+  color: $u-theme-color;
+}
+
+//文本标注
+.text-note {
+  font-size: 24rpx;
+  color: #969dab;
+}
+
+//文本对齐
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+/* 文本省略一排 */
+.text-ellipsis {
+  -webkit-line-clamp: 1;
+}
+
+/* 文本省略两排 */
+.text-ellipsis-2 {
+  -webkit-line-clamp: 2;
+}
+
+/* 定位 */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* 弹性布局 */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-0 {
+  flex: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-between {
+  align-items: space-between;
+}
+
+.items-around {
+  align-items: space-around;
+}
+
+.items-evenly {
+  align-items: space-evenly;
+}
+
+/* 外边距自动 */
+.margin-auto {
+  margin: auto;
+}
+
+.margin-auto-left {
+  margin-left: auto;
+}
+
+.margin-auto-right {
+  margin-right: auto;
+}
+
+.margin-auto-top {
+  margin-top: auto;
+}
+
+.margin-auto-bottom {
+  margin-bottom: auto;
+}
+
+.margin-auto-x {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-auto-y {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* 圆 */
+.circle {
+  border-radius: 50%;
+}
+
+$radius: (
+  2,
+  5,
+  10,
+  20,
+  25
+);
+
+@each $num in $radius {
+  .radius-#{$num} {
+    border-radius: #{$num * 2}rpx;
+  }
+}
+
+/* 背景 */
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-theme {
+  background-color: $u-theme-color;
+}
+
+// 溢出
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+//内外零边距
+.padding-0 {
+  padding: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+// 常用边距
+.padding-24 {
+  padding: 24rpx;
+}
+
+.padding-x-24 {
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+
+.padding-y-24 {
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+}
+
+$types: (
+  left,
+  right,
+  top,
+  bottom
+);
+
+@each $type in $types {
+  .#{$type}-0 {
+    $type: 0;
+  }
+}
+
+@each $type in $types {
+  $head: str-slice($type, 0, 1);
+
+  .margin-#{$head}-24 {
+    margin-#{$type}: 24rpx;
+  }
+}
+
+//按钮点击效果
+.btn-active:active {
+  transform: scale(0.98);
+}
+
+//分割线
+.divider {
+  border-bottom: 1px solid #cbcbcb;
+
+  &.not-first:first-child {
+    border-bottom: none;
+  }
+
+  &.not-last:last-child {
+    border-bottom: none;
+  }
+}
+
+.flex-a-center {
+  display: flex;
+  align-items: center;
+}

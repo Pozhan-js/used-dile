@@ -1,0 +1,196 @@
+view {
+  font-size: 28rpx;
+}
+
+// 容器样式
+.container {
+  height: 100vh;
+  overflow: auto;
+  background: linear-gradient(180deg, #C0D8F7 0%, #F7F7F7 100%);
+
+  &:not([class*="-pages"]) {
+    box-sizing: border-box;
+    padding-bottom: constant(safe-area-inset-bottom) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  &.shadow::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: -20rpx;
+    left: 0;
+    height: 20rpx;
+    z-index: 2023;
+    box-shadow: 0 0 20rpx 0 #ccc;
+  }
+
+  &.wrap {
+    height: fit-content;
+    min-height: 100vh;
+  }
+}
+
+//页面边距
+.box {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+//标题栏
+.section {
+  position: relative;
+  padding: 16rpx 0;
+  line-height: 1;
+  padding-left: 0.8em;
+  font-size: 32rpx;
+  color: $u-main-color;
+  margin-bottom: 12rpx;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 6rpx;
+    height: 30rpx;
+    background: $u-theme-color;
+    border-radius: 5px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+// 尾部带箭头,active激活箭头向下方向
+.arrow,
+.arrow-fill {
+  &::after {
+    display: inline-block;
+    font-family: uicon-iconfont;
+    margin-left: 16rpx;
+    font-size: 24rpx;
+    color: #666;
+    transition: transform 0.3s;
+  }
+}
+
+.arrow::after {
+  content: "\e606";
+}
+
+.arrow.active::after {
+  transform: rotate(180deg) translate(4rpx, -1rpx);
+}
+
+.arrow-fill::after {
+  content: "\e6b0";
+}
+
+.arrow-fill.active::after {
+  transform: rotate(180deg);
+}
+
+// 圆角按钮
+.circle-button {
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 30rpx;
+  background-color: $u-theme-color;
+}
+
+$tags-height: 40rpx;
+
+// 标签盒
+.tags-box {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 12rpx 16rpx;
+  min-height: $tags-height + 10rpx;
+  color: #fcb138;
+}
+
+//标签项
+.tags-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4rpx;
+  height: $tags-height;
+  background: rgb(255, 245, 230);
+  padding: 0 12rpx;
+  line-height: $tags-height;
+  font-size: 22rpx;
+
+  .u-icon {
+    margin-right: 0.25em;
+  }
+}
+
+// 提示文本
+.hint-text {
+  padding: 0.3em 1em;
+  margin-bottom: 24rpx;
+
+  text {
+    margin-left: 0.5em;
+    color: red;
+  }
+}
+
+//批注文本
+.annotation {
+  font-size: 18rpx;
+  color: #fc3838;
+  line-height: 28rpx;
+  padding: 0 28rpx;
+}
+
+//骨架屏
+.skeleton {
+  background-color: #fff;
+
+  .skeleton-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-item::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* #ifdef APP-NVUE */
+    background-color: #f1f2f4;
+    /* #endif */
+    /* #ifndef APP-NVUE */
+    background: linear-gradient(90deg, #f1f2f4 25%, #e6e6e6 37%, #f1f2f4 50%);
+    background-size: 400% 100%;
+    /* #endif */
+    animation: skeleton 1.8s ease infinite;
+    z-index: 2023;
+  }
+
+  &.loading .skeleton-item {
+    image {
+      visibility: hidden;
+    }
+
+    &::before {
+      content: "";
+    }
+  }
+
+  @keyframes skeleton {
+    0% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0 50%;
+    }
+  }
+}
