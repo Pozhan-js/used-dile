@@ -382,3 +382,22 @@ $types: (
   display: flex;
   align-items: center;
 }
+
+.flex-a-center-j-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//页面边距
+.box {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+// 文本影藏、
+.text-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

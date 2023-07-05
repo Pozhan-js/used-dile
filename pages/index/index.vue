@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-05-29 16:07:39
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-04 11:28:44
+ * @LastEditTime: 2023-07-04 17:26:48
  * @FilePath: /uniapp-base/pages/index/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -51,7 +51,7 @@
     </view>
 
     <view class="home-choose">
-      <view class="home-choose-item box">
+      <view class="home-choose-item box" @click="clickRelease">
         <view>
           <view class="item-title">发布闲置</view>
           <view>卖闲置 换现金</view>
@@ -194,6 +194,13 @@ export default {
     clickItemIcon(name) {
       this.$refs.uToast.success(`点击了第${name}个`);
     },
+    // 点击发布闲置
+    clickRelease() {
+      uni.switchTab({
+        url: "/pages/release/release",
+      });
+      this.$refs.uToast.success(`点击了发布闲置`);
+    },
   },
   components: {
     StatusBar,
@@ -201,7 +208,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 %display-space {
   display: flex;
   justify-content: space-between;

@@ -13,7 +13,8 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
 			}
 		},
 		{
@@ -21,6 +22,12 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/release/detail/detail",
+			"style": {
+				"navigationBarTitleText": "发表心情"
 			}
 		}
 	],
@@ -40,27 +47,18 @@
 			]
 		},
 		{
-			"root": "subPages/user",
+			"root": "subPages/my-release",
 			"pages": [
 				{
-					"path": "login/login",
+					"path": "my-release",
 					"style": {
-						"navigationBarTitleText": "账号登录"
+						"navigationBarTitleText": "我发布的"
 					}
 				},
 				{
-					"path": "login/phone-login",
+					"path": "detail",
 					"style": {
-						"navigationBarTitleText": "手机登录"
-					}
-				},
-				{
-					"path": "settings/settings",
-					"style": {
-						"navigationBarTitleText": "设置"
-					},
-					"meta": {
-						"verifyLogin": true
+						"navigationBarTitleText": "发布详情"
 					}
 				}
 			]
@@ -76,6 +74,12 @@
 				"text": "首页",
 				"iconPath": "static/image/tabbar/home.png",
 				"selectedIconPath": "static/image/tabbar/home-active.png"
+			},
+			{
+				"pagePath": "pages/release/release",
+				"text": "发布",
+				"iconPath": "static/image/tabbar/course.png",
+				"selectedIconPath": "static/image/tabbar/course-active.png"
 			},
 			{
 				"pagePath": "pages/user/user",
