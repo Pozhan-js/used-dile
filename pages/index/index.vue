@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-05-29 16:07:39
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-04 17:26:48
+ * @LastEditTime: 2023-07-06 20:34:10
  * @FilePath: /uniapp-base/pages/index/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -34,9 +34,10 @@
     </view>
 
     <view class="home-type-list">
-      <u-grid :border="false" col="4" @click="clickItemIcon">
+      <u-grid :border="false" col="4">
         <u-grid-item
           v-for="(baseListItem, baseListIndex) in baseList"
+          @click="clickItemIcon(baseListItem)"
           :key="baseListIndex"
         >
           <image
@@ -138,6 +139,7 @@ export default {
           image:
             "https://kindoucloud.com:8077/api/mongoFile/Image/systemicon/SmartPark/20230703_3bfcf278650847228eec2f69fba4b3aa.png",
           title: "二手手机",
+          pageUrl: "/subPages/product/product",
         },
         {
           id: 2,
@@ -191,8 +193,11 @@ export default {
     click() {
       console.log("click");
     },
-    clickItemIcon(name) {
-      this.$refs.uToast.success(`点击了第${name}个`);
+    clickItemIcon(item) {
+      // this.$refs.uToast.success(`点击了第${name}个`);
+      uni.navigateTo({
+        url: item.pageUrl,
+      });
     },
     // 点击发布闲置
     clickRelease() {

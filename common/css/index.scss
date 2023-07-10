@@ -389,6 +389,12 @@ $types: (
   justify-content: space-between;
 }
 
+.flex-a-center-j-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 //页面边距
 .box {
   padding: 0 32rpx;

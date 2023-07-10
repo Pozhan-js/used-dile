@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-07-05 16:56:57
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-06 00:24:54
+ * @LastEditTime: 2023-07-10 17:29:14
  * @FilePath: /used-idle/subPages/my-release/detail.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -80,6 +80,30 @@
       <view class="hope-people">8人想买｜150人浏览</view>
       <view class="release-address">30分钟前发布于长沙</view>
     </view>
+
+    <view class="release-detail-footer flex-a-center-j-space-between box">
+      <view class="footer-left flex-a-center-j-space-between">
+        <u-icon
+          name="star"
+          label="收藏"
+          size="24"
+          labelPos="bottom"
+          labelSize="10"
+          style="marginright: '60rpx'"
+        ></u-icon>
+        <u-icon
+          name="chat"
+          labelSize="10"
+          label="留言"
+          size="24"
+          labelPos="bottom"
+        ></u-icon>
+      </view>
+      <view class="footer-right flex-a-center">
+        <view class="footer-btn box">加入购物车</view>
+        <view class="footer-btn active-btn box">去付款</view>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -127,6 +151,8 @@ export default {
 }
 
 .release-detail {
+  position: relative;
+
   &-header {
     padding-bottom: 30rpx;
     border-bottom: 1px solid #eee;
@@ -141,6 +167,8 @@ export default {
   }
 
   &-body {
+    padding-bottom: 300rpx;
+
     .user-info {
       margin-bottom: 38rpx;
 
@@ -322,6 +350,7 @@ export default {
       line-height: 35rpx;
       margin-top: 12rpx;
       float: right;
+      margin-top: 18rpx;
     }
 
     .release-address {
@@ -329,8 +358,42 @@ export default {
       font-size: 29rpx;
       color: #333333;
       line-height: 42rpx;
+      clear: both;
       float: right;
+      margin-top: 18rpx;
     }
   }
+
+  &-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 134rpx;
+    background: #fff;
+    padding-bottom: 40rpx;
+    padding-top: 20rpx;
+
+    .footer-left {
+      width: 130rpx;
+    }
+
+    .footer-right {
+      .footer-btn {
+        // width: 142rpx;
+        // min-width: 142rpx;
+        height: 67rpx;
+        background: #efefef;
+        border-radius: 33rpx;
+        line-height: 67rpx;
+        text-align: center;
+        margin-left: 20rpx;
+      }
+    }
+  }
+}
+
+.active-btn {
+  background: #f6f931 !important;
 }
 </style>

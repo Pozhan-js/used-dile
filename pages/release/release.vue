@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-07-04 11:33:32
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-04 16:38:35
+ * @LastEditTime: 2023-07-10 11:45:42
  * @FilePath: /used-idle/pages/release/release.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -23,7 +23,7 @@
     </view>
 
     <view class="release-content">
-      <view class="release-content-item box">
+      <view class="release-content-item box" @click.native="clickReleaseBtn">
         <view class="release-content-item-left">
           <image
             src="https://kindoucloud.com:8077/api/mongoFile/Image/systemicon/SmartPark/20230703_0a514b9fcdb7426f863f1668cee859ef.png"
@@ -35,7 +35,7 @@
           </view>
         </view>
 
-        <u-icon name="arrow-right" @click.native="clickReleaseBtn"></u-icon>
+        <u-icon name="arrow-right"></u-icon>
       </view>
     </view>
 
@@ -57,7 +57,7 @@ export default {
   methods: {
     clickReleaseBtn() {
       uni.navigateTo({
-        url: "/pages/release/detail/detail",
+        url: "./detail/detail",
       });
     },
   },
