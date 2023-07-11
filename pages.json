@@ -71,6 +71,18 @@
 					"style": {
 						"navigationBarTitleText": "商品展示"
 					}
+				},
+				{
+					"path": "product-pay",
+					"style": {
+						"navigationBarTitleText": "商品支付"
+					}
+				},
+				{
+					"path": "product-order",
+					"style": {
+						"navigationBarTitleText": "商品订单"
+					}
 				}
 			]
 		}

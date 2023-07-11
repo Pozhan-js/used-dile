@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-05-29 16:07:39
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-06 20:34:10
+ * @LastEditTime: 2023-07-11 11:01:20
  * @FilePath: /uniapp-base/pages/index/index.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -64,8 +64,8 @@
       </view>
       <view class="home-choose-item box">
         <view>
-          <view class="item-title">发布闲置</view>
-          <view>卖闲置 换现金</view>
+          <view class="item-title">在线估价</view>
+          <view>平台估价可靠</view>
         </view>
         <image
           src="https://kindoucloud.com:8077/api/mongoFile/Image/systemicon/SmartPark/20230703_0a514b9fcdb7426f863f1668cee859ef.png"
@@ -87,7 +87,7 @@
     </view>
 
     <view class="home-shop">
-      <view class="home-shop-item flex-a-center">
+      <view class="home-shop-item flex-a-center" @click="clickProduct">
         <image
           src="https://kindoucloud.com:8077/api/mongoFile/Image/systemicon/SmartPark/20230704_339809fe4e1c437884bf0dcadb58fa8d.png"
           class="img"
@@ -205,6 +205,11 @@ export default {
         url: "/pages/release/release",
       });
       this.$refs.uToast.success(`点击了发布闲置`);
+    },
+    clickProduct() {
+      uni.navigateTo({
+        url: "/subPages/my-release/detail",
+      });
     },
   },
   components: {

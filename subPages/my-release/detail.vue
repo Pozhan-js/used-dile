@@ -2,7 +2,7 @@
  * @Author: Why so serious my dear 854059946@qq.com
  * @Date: 2023-07-05 16:56:57
  * @LastEditors: Why so serious my dear 854059946@qq.com
- * @LastEditTime: 2023-07-10 17:29:14
+ * @LastEditTime: 2023-07-11 11:08:50
  * @FilePath: /used-idle/subPages/my-release/detail.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -101,7 +101,7 @@
       </view>
       <view class="footer-right flex-a-center">
         <view class="footer-btn box">加入购物车</view>
-        <view class="footer-btn active-btn box">去付款</view>
+        <view class="footer-btn active-btn box" @click="toPay">去付款</view>
       </view>
     </view>
   </view>
@@ -139,6 +139,13 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    toPay() {
+      uni.navigateTo({
+        url: "../product/product-order",
+      });
+    },
   },
 };
 </script>
